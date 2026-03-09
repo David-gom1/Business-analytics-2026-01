@@ -1,0 +1,16 @@
+web-analytics-quality-alloys/
+
+README.md
+analysis/
+
+    data/
+        Quality_Alloys_Data.xlsx
+
+    graphs/
+    
+    excel/
+        analysis.xlsx
+
+report/
+    executive_summary.docx
+    answers.docx
