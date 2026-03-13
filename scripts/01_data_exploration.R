@@ -1,25 +1,27 @@
+setwd(data)
+getwd()  # Verifica que estás en el directorio correcto
+
+install.packages(c("tidyverse", "readxl", "ggplot2"))
+
 library(tidyverse)
 library(readxl)
+library(ggplot2)
 
-# Ver hojas del archivo
-excel_sheets("data/Web_Analytics.xls")
+excel_sheets("Web_Analytics.xls")
 
-# Cargar datos
-weekly <- read_excel("data/Web_Analytics.xls", sheet = "Weekly Visits")
-financials <- read_excel("data/Web_Analytics.xls", sheet = "Financials")
-lbs_sold <- read_excel("data/Web_Analytics.xls", sheet = "Lbs. Sold")
-daily <- read_excel("data/Web_Analytics.xls", sheet = "Daily Visits")
+weekly <- read_excel("Web_Analytics.xls", sheet = "Weekly Visits")
+financials <- read_excel("Web_Analytics.xls", sheet = "Financials")
+lbs_sold <- read_excel("Web_Analytics.xls", sheet = "Lbs. Sold")
+daily <- read_excel("Web_Analytics.xls", sheet = "Daily Visits")
 
-# Revisar estructura
-str(weekly)
-str(financials)
 
-# Primeras filas
 head(weekly)
 head(financials)
 head(lbs_sold)
 head(daily)
 
-# Resumen estadístico
+str(weekly)
+str(financials)
+
 summary(weekly)
 summary(financials)
