@@ -1,8 +1,4 @@
-library(readxl)
-library(tidyverse)
-library(ggplot2)
-
-financials <- read_excel("data/Web_Analytics.xls", sheet = "Financials")
+financials <- read_excel("Web_Analytics.xls", sheet = "Financials")
 
 # Relación visitas y revenue
 ggplot(financials, aes(x = `Lbs. Sold`, y = Revenue)) +
