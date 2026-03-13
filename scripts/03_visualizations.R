@@ -1,17 +1,20 @@
-library(tidyverse)
-library(readxl)
-library(ggplot2)
+# Renombrar columna para facilitar uso
+weekly <- weekly %>%
+  rename(Week = `Week (2008-2009)`)
 
-weekly <- read_excel("data/Web_Analytics.xls", sheet = "Weekly Visits")
+# Crear índice numérico de semana
+weekly$Week_Number <- 1:nrow(weekly)
 
-# Tendencia de visitas
-ggplot(weekly, aes(x = `Week (2008-2009)`, y = Visits)) +
-  geom_line(color="blue") +
+# Gráfico de tendencia de visitas
+ggplot(weekly, aes(x = Week_Number, y = Visits)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point() +
   labs(
-    title="Weekly Website Visits",
-    x="Week",
-    y="Visits"
-  )
+    title = "Weekly Website Visits",
+    x = "Week",
+    y = "Visits"
+  ) +
+  theme_minimal()
 
 # Pageviews vs visitas
 ggplot(weekly, aes(x = Visits, y = Pageviews)) +
