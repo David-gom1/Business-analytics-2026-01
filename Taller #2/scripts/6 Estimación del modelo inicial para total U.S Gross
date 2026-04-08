@@ -1,0 +1,6 @@
+# Modelo inicial para explicar Total U.S. Gross
+
+modelo4 <- lm(Total U.S. Gross ~ Opening Gross + Budget + Sequel + comedia,
+              data = datos)
+
+summary(modelo4)
