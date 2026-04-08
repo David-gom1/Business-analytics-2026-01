@@ -1,0 +1,5 @@
+# Comparar si el modelo con interacción mejora el ajuste
+
+anova(modelo5, modelo6)
+
+summary(modelo6)$adj.r.squared
