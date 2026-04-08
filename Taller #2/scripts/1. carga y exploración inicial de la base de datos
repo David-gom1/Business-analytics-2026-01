@@ -1,6 +1,6 @@
 # Cargar la base
 
-datos <- read.csv("movies.csv")
+datos <- read_excel("Hollywood.xls", sheet = "Exhibit 1")
 
 # Revisar estructura
 str(datos)
