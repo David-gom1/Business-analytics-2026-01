@@ -1,0 +1,40 @@
+# Intervalos de confianza
+confint(modelo2)
+
+# Gráficos de diagnóstico
+par(mfrow = c(2,2))
+plot(modelo2)
+par(mfrow = c(1,1))
+
+# Residuales vs ajustados
+plot(fitted(modelo2), resid(modelo2),
+     xlab = "Valores ajustados",
+     ylab = "Residuales",
+     main = "Residuales vs Ajustados")
+abline(h = 0, col = "red")
+
+# Histograma de residuales
+hist(resid(modelo2),
+     main = "Histograma de residuales",
+     xlab = "Residuales")
+
+# Prueba de normalidad
+shapiro.test(resid(modelo2))
+
+# Predicción para una nueva película
+nueva_pelicula <- data.frame(
+  Budget = 45000000,
+  comedia = 1,
+  MPAA_D = 1,
+  Sequel = 1,
+  `Known Story` = 0,
+  `Opening Theatres` = 3200,
+  Summer = 0,
+  Holiday = 0,
+  Christmas = 0
+)
+
+predict(modelo2,
+        newdata = nueva_pelicula,
+        interval = "prediction",
+        level = 0.95)
