@@ -1,0 +1,7 @@
+# Agregar Critics' Opinion al modelo
+
+modelo5 <- lm(Total U.S. Gross ~ Budget + Sequel + comedia +
+                Opening Gross + Critics´ Opinion,
+              data = datos)
+
+summary(modelo5)
