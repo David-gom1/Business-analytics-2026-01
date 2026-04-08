@@ -1,0 +1,16 @@
+# Predicción para Scary Movie 4
+
+scary <- subset(datos, Movie == "Scary Movie 4")
+
+nuevo <- data.frame(
+  Budget = scary$Budget,
+  Sequel = scary$Sequel,
+  comedia = scary$comedia,
+  Opening Gross = scary$Opening Gross,
+  Critics´ Opinion = scary$Critics´ Opinion
+)
+
+predict(modelo5,
+        newdata = nuevo,
+        interval = "prediction",
+        level = 0.95)
