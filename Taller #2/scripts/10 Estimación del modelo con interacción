@@ -1,0 +1,7 @@
+# Modelo con interacción entre Critics Opinion y comedia
+
+modelo6 <- lm(Total U.S. Gross ~ Budget + Opening Gross +
+                Critics´ Opinion * comedia,
+              data = datos)
+
+summary(modelo6)
