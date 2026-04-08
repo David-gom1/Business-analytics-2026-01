@@ -1,0 +1,4 @@
+# Modelo simple
+modelo1 <- lm(`Opening Gross` ~ Budget, data = datos)
+
+summary(modelo1)
