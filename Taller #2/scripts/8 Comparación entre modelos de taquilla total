@@ -1,0 +1,7 @@
+# Comparación entre los dos modelos
+
+anova(modelo4, modelo5)
+
+# Revisar cuál tiene mejor ajuste
+summary(modelo4)$adj.r.squared
+summary(modelo5)$adj.r.squared
