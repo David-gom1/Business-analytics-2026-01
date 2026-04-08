@@ -1,0 +1,9 @@
+# Modelo múltiple
+modelo2 <- lm(`Opening Gross` ~ Budget + comedia + MPAA_D + Sequel +
+                `Known Story` + `Opening Theatres` + Summer + Holiday + Christmas,
+              data = datos)
+
+summary(modelo2)
+
+# Comparación entre modelos
+anova(modelo1, modelo2)
