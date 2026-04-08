@@ -1,6 +1,8 @@
-# Modelo inicial para explicar Total U.S. Gross
+# Cargar la base
 
-modelo4 <- lm(`Total U.S. Gross` ~ `Opening Gross` + Budget + Sequel + comedia,
-              data = datos)
+datos <- read.csv("movies.csv")
 
-summary(modelo4)
+# Revisar estructura
+str(datos)
+summary(datos)
+colnames(datos)
