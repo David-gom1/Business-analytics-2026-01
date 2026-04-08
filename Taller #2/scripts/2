@@ -1,0 +1,19 @@
+# Crear dummy para comedia
+datos$comedia <- ifelse(datos$Genre == "Comedy", 1, 0)
+
+# Crear dummy MPAA
+datos$MPAA_D <- ifelse(datos$MPAA %in% c("PG-13", "R"), 1, 0)
+
+# Convertir variables binarias
+datos$Sequel <- as.numeric(datos$Sequel)
+datos$`Known Story` <- as.numeric(datos$`Known Story`)
+datos$Summer <- as.numeric(datos$Summer)
+datos$Holiday <- as.numeric(datos$Holiday)
+datos$Christmas <- as.numeric(datos$Christmas)
+
+# Estadísticas descriptivas
+summary(datos[, c("Budget", "Opening Gross", "Total U.S. Gross")])
+
+# Correlaciones
+cor(datos[, c("Budget", "Opening Gross", "Total U.S. Gross")],
+    use = "complete.obs")
